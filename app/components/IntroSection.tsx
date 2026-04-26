@@ -24,7 +24,7 @@ export default function IntroSection() {
                          text-[36px] md:text-[52px]
                          leading-[1.1] tracking-[-0.02em]
                          mb-10">
-            I&apos;m Dave. I&apos;ve been doing this in Ridgeview for [X] years.
+            I&apos;m Dave. I&apos;ve been doing this in Ridgeview for 25 years.
           </h2>
           <div className="space-y-6 text-ink/85 text-[18px] md:text-[20px] leading-[1.65]">
             <p>
