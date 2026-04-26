@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function DailyUpdatesSection() {
   return (
-    <section className="bg-bone py-32 md:py-40 px-6 md:px-12">
+    <section className="bg-bone py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
 
         <div className="max-w-xl">
@@ -40,17 +40,25 @@ export default function DailyUpdatesSection() {
           </p>
         </div>
 
-        <div className="flex justify-center md:justify-end">
-          <div className="max-w-sm w-full rounded-image overflow-hidden
-                          shadow-[0_30px_80px_-20px_rgba(26,21,16,0.3)]">
+        {/* Phone screenshot — properly framed */}
+        <div className="relative flex justify-center md:justify-end">
+          <div className="absolute inset-0 bg-cream rounded-image -z-10
+                          transform translate-x-4 translate-y-4
+                          hidden md:block" />
+          <div className="max-w-sm w-full bg-paper rounded-image p-8 md:p-10
+                          border border-border
+                          shadow-[0_30px_80px_-20px_rgba(26,21,16,0.25)]">
             <Image
               src="/images/text-thread-screenshot.png"
               alt="Real text message thread between Dave and a client showing daily updates"
               width={1086}
               height={1448}
-              sizes="(max-width: 768px) 80vw, 384px"
-              className="w-full h-auto object-cover"
+              sizes="(max-width: 768px) 80vw, 320px"
+              className="w-full h-auto"
             />
+            <p className="text-stone text-[12px] uppercase tracking-[0.18em] text-center mt-6">
+              Real client thread &middot; Identifying details removed
+            </p>
           </div>
         </div>
 

@@ -2,10 +2,10 @@ import Image from 'next/image'
 
 export default function IntroSection() {
   return (
-    <section className="bg-cream py-32 md:py-40 px-6 md:px-12">
+    <section className="bg-cream py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
 
-        <div className="rounded-image overflow-hidden shadow-[0_20px_60px_-20px_rgba(26,21,16,0.2)]">
+        <div className="rounded-image overflow-hidden shadow-[0_16px_48px_-16px_rgba(26,21,16,0.2)]">
           <Image
             src="/images/dave-onsite.jpg"
             alt="Dave on a job site"

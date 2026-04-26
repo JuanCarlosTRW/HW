@@ -1,6 +1,8 @@
+import BookCTA from './BookCTA'
+
 export default function FirstHourSection() {
   return (
-    <section className="bg-bone py-32 md:py-40 px-6 md:px-12">
+    <section className="bg-bone py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-3xl mx-auto">
         <p className="text-stone uppercase tracking-[0.22em] text-[11px] font-medium mb-8">
           The First Hour
@@ -32,15 +34,8 @@ export default function FirstHourSection() {
           </p>
         </div>
 
-        <div className="mt-16">
-          <a
-            href="#book"
-            className="inline-block w-full md:w-auto bg-accent hover:bg-accent-dark
-                       text-paper px-10 py-5 text-[16px] font-medium rounded-none
-                       transition-colors duration-300"
-          >
-            Book Your Kitchen Table Consult
-          </a>
+        <div className="flex justify-center">
+          <BookCTA />
         </div>
       </div>
     </section>

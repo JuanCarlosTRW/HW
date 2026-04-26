@@ -1,11 +1,14 @@
 import AnimationProvider from '@/app/components/AnimationProvider'
+import TopBar from '@/app/components/TopBar'
 import Hero from '@/app/components/Hero'
 import RecognitionSection from '@/app/components/RecognitionSection'
 import IntroSection from '@/app/components/IntroSection'
+import PullQuoteSection from '@/app/components/PullQuoteSection'
 import FirstHourSection from '@/app/components/FirstHourSection'
 import TestimonialSection from '@/app/components/TestimonialSection'
 import DailyUpdatesSection from '@/app/components/DailyUpdatesSection'
 import DisqualifierSection from '@/app/components/DisqualifierSection'
+import ClosingSection from '@/app/components/ClosingSection'
 import BookingFormSection from '@/app/components/BookingFormSection'
 import Footer from '@/app/components/Footer'
 
@@ -18,15 +21,18 @@ export default function Page() {
       >
         Skip to booking form
       </a>
+      <TopBar />
       <AnimationProvider>
         <main>
           <Hero />
           <RecognitionSection />
           <IntroSection />
+          <PullQuoteSection />
           <FirstHourSection />
           <TestimonialSection />
           <DailyUpdatesSection />
           <DisqualifierSection />
+          <ClosingSection />
           <BookingFormSection />
           <Footer />
         </main>
