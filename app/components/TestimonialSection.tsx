@@ -1,96 +1,40 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImagePlaceholder from "./ImagePlaceholder";
-
-gsap.registerPlugin(ScrollTrigger);
-
-const quoteText =
-  "I was so nervous about this. $42K is a lot of money and I've heard horror stories. Dave came out, spent an hour just talking through what we wanted, didn't push anything we didn't need. The kitchen is done and I honestly get emotional looking at it sometimes. It's exactly what I pictured.";
+import Image from 'next/image'
 
 export default function TestimonialSection() {
-  const imageRef = useRef<HTMLDivElement>(null);
-  const quoteRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    const xDist = isMobile ? 15 : 30;
-
-    if (imageRef.current) {
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0, x: -xDist },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: imageRef.current,
-            start: "top 85%",
-          },
-        }
-      );
-    }
-
-    if (quoteRef.current) {
-      const words = quoteRef.current.querySelectorAll(".word");
-      const stagger = isMobile ? 0.015 : 0.03;
-      gsap.fromTo(
-        words,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.4,
-          stagger,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: quoteRef.current,
-            start: "top 85%",
-          },
-        }
-      );
-    }
-  }, []);
-
-  const words = quoteText.split(" ");
-
   return (
-    <section className="bg-charcoal py-24 md:py-32 px-6 md:px-12">
-      <div className="max-w-5xl mx-auto">
-        <p className="font-sans text-[12px] uppercase tracking-[0.18em] text-accent mb-12">
-          TAMARA&apos;S KITCHEN · RIDGEVIEW · $42,000
+    <section className="bg-charcoal text-bone py-32 md:py-40 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+
+        <p className="text-accent uppercase tracking-[0.22em] text-[11px] font-medium mb-16">
+          Tamara&apos;s Kitchen &middot; Ridgeview &middot; $42,000
         </p>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div ref={imageRef} className="opacity-0">
-            <ImagePlaceholder
-              filename="tamara-kitchen.jpg"
-              className="aspect-[4/3] w-full"
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16 items-center">
+
+          <div className="md:col-span-2 rounded-image overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]">
+            <Image
+              src="/images/tamara-kitchen.jpg"
+              alt="Tamara in her finished kitchen"
+              width={1448}
+              height={1086}
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="w-full h-auto object-cover aspect-[4/3]"
             />
           </div>
 
-          <div>
-            <div ref={quoteRef}>
-              <blockquote className="font-serif italic text-bone text-[28px] md:text-[32px] leading-[1.4]">
-                &ldquo;
-                {words.map((word, i) => (
-                  <span key={i} className="word opacity-0">
-                    {word}
-                    {i < words.length - 1 ? " " : ""}
-                  </span>
-                ))}
-                &rdquo;
-              </blockquote>
-            </div>
-            <p className="font-sans text-sm text-stone mt-8">
-              -- Tamara J., Ridgeview
+          <blockquote className="md:col-span-3">
+            <p className="font-serif italic font-normal text-bone
+                          text-[26px] md:text-[34px]
+                          leading-[1.4] tracking-[-0.01em]">
+              &ldquo;I was so nervous about this. $42K is a lot of money and I&apos;ve heard horror stories. Dave came out, spent an hour just talking through what we wanted, didn&apos;t push anything we didn&apos;t need. The kitchen is done and I honestly get emotional looking at it sometimes. It&apos;s exactly what I pictured.&rdquo;
             </p>
-          </div>
+            <footer className="mt-10 text-stone text-[14px] font-sans tracking-wider">
+              -- Tamara J., Ridgeview
+            </footer>
+          </blockquote>
+
         </div>
       </div>
     </section>
-  );
+  )
 }

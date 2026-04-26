@@ -1,105 +1,60 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImagePlaceholder from "./ImagePlaceholder";
-
-gsap.registerPlugin(ScrollTrigger);
+import Image from 'next/image'
 
 export default function DailyUpdatesSection() {
-  const textRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    const xDist = isMobile ? 15 : 30;
-
-    if (textRef.current) {
-      gsap.fromTo(
-        textRef.current,
-        { opacity: 0, x: -xDist },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: textRef.current,
-            start: "top 85%",
-          },
-        }
-      );
-    }
-
-    if (imageRef.current) {
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0, x: xDist },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: imageRef.current,
-            start: "top 85%",
-          },
-        }
-      );
-    }
-  }, []);
-
   return (
-    <section className="bg-bone py-24 md:py-32 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-        <div ref={textRef} className="max-w-xl opacity-0">
-          <p className="font-sans text-[12px] uppercase tracking-[0.18em] text-stone mb-8">
-            WHAT YOU GET, EVERY DAY
+    <section className="bg-bone py-32 md:py-40 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+
+        <div className="max-w-xl">
+          <p className="text-stone uppercase tracking-[0.22em] text-[11px] font-medium mb-8">
+            What You Get, Every Day
           </p>
 
-          <h2 className="font-serif font-medium text-[36px] md:text-[48px] text-ink leading-[1.05] tracking-[-0.02em] mb-8">
+          <h2 className="font-serif font-medium text-ink
+                         text-[36px] md:text-[52px]
+                         leading-[1.1] tracking-[-0.02em]
+                         mb-10">
             You&apos;ll know what&apos;s happening in your home every single day.
           </h2>
 
-          <div className="space-y-6 font-sans text-[16px] md:text-[18px] leading-[1.65] text-ink">
+          <div className="space-y-6 text-ink/85 text-[18px] md:text-[20px] leading-[1.65]">
             <p>This is the part most contractors get wrong.</p>
             <p>
-              You&apos;re letting strangers tear apart a room you live in. You
-              deserve to know what&apos;s happening in there. Every day.
+              You&apos;re letting strangers tear apart a room you live in. You deserve to know what&apos;s happening in there. Every day.
             </p>
           </div>
 
-          <h3 className="font-serif text-[24px] text-ink mt-12 mb-8">
+          <p className="font-serif text-[24px] md:text-[28px] font-medium text-ink mt-16 mb-10">
             So here&apos;s what you get from me:
-          </h3>
+          </p>
 
-          <div className="space-y-6 font-sans text-[16px] md:text-[18px] leading-[1.65] text-ink">
+          <div className="space-y-6 text-ink/85 text-[18px] md:text-[20px] leading-[1.5]">
             <p>A text every morning before the crew arrives.</p>
             <p>A photo at the end of the day showing what got done.</p>
-            <p>
-              A heads-up the night before anything noisy or disruptive is
-              happening.
-            </p>
-            <p>
-              A real timeline written down before we start, and an honest update
-              if anything changes.
-            </p>
+            <p>A heads-up the night before anything noisy or disruptive is happening.</p>
+            <p>A real timeline written down before we start, and an honest update if anything changes.</p>
           </div>
 
-          <p className="font-serif italic font-medium text-ink text-[18px] md:text-[20px] mt-12">
-            No silence. No surprises. No wondering if the crew is showing up
-            tomorrow.
+          <p className="font-serif italic text-[24px] md:text-[28px] text-ink mt-16 leading-[1.4]">
+            No silence. No surprises. No guessing what&apos;s happening in your own home.
           </p>
         </div>
 
-        <div ref={imageRef} className="flex justify-center items-start opacity-0">
-          <ImagePlaceholder
-            filename="text-thread-screenshot.png"
-            className="max-w-sm w-full shadow-xl aspect-[9/16]"
-          />
+        <div className="flex justify-center md:justify-end">
+          <div className="max-w-sm w-full rounded-image overflow-hidden
+                          shadow-[0_30px_80px_-20px_rgba(26,21,16,0.3)]">
+            <Image
+              src="/images/text-thread-screenshot.png"
+              alt="Real text message thread between Dave and a client showing daily updates"
+              width={1086}
+              height={1448}
+              sizes="(max-width: 768px) 80vw, 384px"
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
+
       </div>
     </section>
-  );
+  )
 }
