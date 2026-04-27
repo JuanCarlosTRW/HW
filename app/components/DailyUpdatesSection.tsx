@@ -18,6 +18,7 @@ export default function DailyUpdatesSection() {
           </h2>
 
           <div className="space-y-6 text-ink/85 text-[18px] md:text-[20px] leading-[1.65]">
+            <p>You don&apos;t just want a beautiful kitchen at the end. You want to actually enjoy your home while it&apos;s being built.</p>
             <p>This is the part most contractors get wrong.</p>
             <p>
               You&apos;re letting strangers tear apart a room you live in. You deserve to know what&apos;s happening in there. Every day.

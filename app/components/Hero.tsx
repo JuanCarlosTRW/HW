@@ -113,7 +113,10 @@ export default function Hero() {
             I don&apos;t.
           </p>
           <p className="text-ink/85 text-[18px] md:text-[20px] leading-[1.65] mb-6">
-            I sit at your kitchen table for an hour with a notebook before I quote a single dollar. Then I tell you every day what&apos;s happening in your home until the last tile is set.
+            I build the kitchen you&apos;ve been picturing for two years. The one your friends walk into and stop talking mid-sentence. The one you get a little emotional standing in.
+          </p>
+          <p className="text-ink/85 text-[18px] md:text-[20px] leading-[1.65] mb-6">
+            I get there by sitting at your kitchen table for an hour first, with a notebook. And by telling you every day what&apos;s happening in your home until the last tile is set.
           </p>
           <p className="text-ink/85 text-[18px] md:text-[20px] leading-[1.65]">
             That&apos;s the whole job.

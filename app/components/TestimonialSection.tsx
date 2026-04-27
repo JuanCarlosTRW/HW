@@ -23,6 +23,9 @@ export default function TestimonialSection() {
           <p className="text-stone text-[14px] mt-2 tracking-wider">
             RIDGEVIEW &middot; 6-WEEK BUILD &middot; $42,000
           </p>
+          <p className="font-serif italic text-bone/60 text-[18px] md:text-[20px] mt-6 max-w-md mx-auto leading-[1.4]">
+            The kitchen she&apos;d been saving Pinterest pins of for three years.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">

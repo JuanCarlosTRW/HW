@@ -8,10 +8,10 @@ export default function ClosingSection() {
         <h2 className="font-serif font-medium text-ink
                        text-[36px] md:text-[52px]
                        leading-[1.1] tracking-[-0.02em] mb-10">
-          You&apos;ve been thinking about this kitchen for two years.
+          The kitchen you&apos;ve been picturing is one hour away from being on paper.
         </h2>
-        <p className="font-serif italic text-ink/75 text-[22px] md:text-[26px] leading-[1.5]">
-          The next step is one hour at your kitchen table.
+        <p className="font-serif italic text-ink/75 text-[22px] md:text-[26px] leading-[1.5] max-w-2xl mx-auto">
+          Not built. Not quoted. Just understood &mdash; by someone who&apos;s actually going to listen.
         </p>
       </div>
     </section>

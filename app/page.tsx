@@ -2,6 +2,7 @@ import AnimationProvider from '@/app/components/AnimationProvider'
 import TopBar from '@/app/components/TopBar'
 import Hero from '@/app/components/Hero'
 import RecognitionSection from '@/app/components/RecognitionSection'
+import DreamStateSection from '@/app/components/DreamStateSection'
 import IntroSection from '@/app/components/IntroSection'
 import PullQuoteSection from '@/app/components/PullQuoteSection'
 import FirstHourSection from '@/app/components/FirstHourSection'
@@ -26,6 +27,7 @@ export default function Page() {
         <main>
           <Hero />
           <RecognitionSection />
+          <DreamStateSection />
           <IntroSection />
           <PullQuoteSection />
           <FirstHourSection />
